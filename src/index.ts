@@ -14,11 +14,6 @@ const app: Express = express()
 const port = process.env.PORT || 8000
 const mongoDbUri = process.env.MONGO_DB_URI || ''
 
-app.use(async (_req, _res, next) => {
-  await mongoose.connect(mongoDbUri)
-  next()
-})
-
 app.use(firebaseInit)
 
 app.use(json())
@@ -40,7 +35,9 @@ app.use(errorLogger)
 
 app.use(errors)
 
-app.listen(port, () => {
-  // eslint-disable-next-line no-console
-  console.log(`⚡️[server]: Server is running at http://localhost:${port}`)
+void mongoose.connect(mongoDbUri).then(() => {
+  app.listen(port, () => {
+    // eslint-disable-next-line no-console
+    console.log(`⚡️[server]: Server is running at http://localhost:${port}`)
+  })
 })
