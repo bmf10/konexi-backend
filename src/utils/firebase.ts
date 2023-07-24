@@ -3,15 +3,14 @@ import { type RequestHandler } from 'express'
 import { type File } from '../types'
 import { getStorage } from 'firebase-admin/storage'
 import moment from 'moment'
+import path from 'path'
 
 export const firebaseInit: RequestHandler = (_req, _res, next) => {
   if (firebase.apps.length === 0) {
     firebase.initializeApp({
-      credential: firebase.credential.cert({
-        clientEmail: process.env.CLIENT_EMAIL,
-        privateKey: process.env.PRIVATE_KEY,
-        projectId: process.env.PROJECT_ID,
-      }),
+      credential: firebase.credential.cert(
+        path.resolve('config/firebase.json'),
+      ),
       storageBucket: process.env.FIREBASE_BUCKET_NAME,
     })
   }
