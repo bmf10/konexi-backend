@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "noImplicitAny": true,
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "strict": true,
+    "strictNullChecks": true,
+    "pretty": true,
+    "typeRoots": ["./src/types", "./node_modules/@types"],
+    "sourceMap": true,
+    "target": "ES2022",
+    "lib": ["ES2022"],
+    "outDir": "dist"
+  }
+}
