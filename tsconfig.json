@@ -12,6 +12,6 @@
     "sourceMap": true,
     "target": "ES2022",
     "lib": ["ES2022"],
-    "outDir": "api"
+    "outDir": "dist"
   }
 }
