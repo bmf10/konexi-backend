@@ -1,13 +1,13 @@
 {
     "functions": {
-        "dist/index.js": {
+        "api/index.js": {
             "runtime": "@vercel/node@1.12.1"
         }
     },
     "rewrites": [
         {
             "source": "/(.*)",
-            "destination": "/dist/index.js"
+            "destination": "/api/index.js"
         }
     ]
 }

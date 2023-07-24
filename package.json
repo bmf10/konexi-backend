@@ -6,10 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx tsc",
-    "start": "node dist/index.js",
-    "dev": "npm run build && concurrently \"npx tsc --watch\" \"nodemon -q  dist/index.js\"",
+    "start": "node api/index.js",
+    "dev": "npm run build && concurrently \"npx tsc --watch\" \"nodemon -q  api/index.js\"",
     "prettier:fix": "prettier --write .",
-    "cleanUp": "rm -rf dist"
+    "cleanUp": "rm -rf api"
   },
   "keywords": [],
   "author": "",
